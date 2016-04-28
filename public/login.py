@@ -1,7 +1,7 @@
 #coding:utf-8
 from selenium import webdriver
 
-driver = webdriver.Firefox()
+# driver = webdriver.Firefox()
 
 def login(driver,role):
 	if role == '1':
