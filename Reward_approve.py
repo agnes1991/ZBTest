@@ -27,4 +27,4 @@ driver.find_element_by_xpath("/html/body/div[1]/div[2]/table/tbody/tr/td[2]/div/
 driver.switch_to_alert().accept()
 print "悬赏通过审核"
 
-# driver.quit()
+driver.quit()

@@ -12,15 +12,6 @@ driver = webdriver.Firefox()
 
 #登陆
 login.login(driver,'1')
-
-
-# driver.get("http://www.oschina.org/home/login?goto_page=http%3A%2F%2Fzb.oschina.org%2F")
-# driver.find_element_by_id("f_email").clear()
-# driver.find_element_by_id("f_email").send_keys("huangrui@oschina.cn")
-# driver.find_element_by_id("f_pwd").clear()
-# driver.find_element_by_id("f_pwd").send_keys("P@ssw0rd1234")
-# driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[1]/form/div[2]/table/tbody/tr[7]/td/input").click()
-
 print "登陆成功"
 
 #进入悬赏
@@ -79,7 +70,7 @@ print "填写悬赏信息完成"
 # print "保存悬赏成功"
 
 # 发布悬赏
-# driver.find_element_by_id("publish-reward-submit").click()
+driver.find_element_by_id("publish-reward-submit").click()
 print "发布悬赏"
 
 driver.quit()
