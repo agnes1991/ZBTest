@@ -3,6 +3,7 @@ from selenium import webdriver
 # import time
 import sys
 from public import login
+from public import pub
 from selenium.webdriver.common.action_chains import ActionChains
 # import os
 
@@ -14,13 +15,26 @@ driver = webdriver.Firefox()
 login.login(driver,'1')
 print "登陆成功"
 
+#获取登录后的页面句柄
+home_page = driver.current_window_handle
+#获取所有页面句柄
+all_handles = driver.window_handles
+
 #进入悬赏
-driver.get("http://zb.oschina.org/")
-driver.find_element_by_xpath("/html/body/header/div[3]/div/div[2]/div/div/a[1]").click()
+#遍历全部页面，找到当前页面，焦点切换到首页
+for handle in all_handles:
+	if handle == home_page:
+		driver.find_element_by_link_text(u"悬赏")
+
 
 #发布悬赏
-driver.get("http://zb.oschina.org/reward")
-driver.find_element_by_xpath("/html/body/header/div[3]/div/div[2]/div/a").click()
+reward_new = driver.current_window_handle
+for handle in all_handles:
+	if handle == reward_new:
+		driver.find_element_by_link_text(u"发布悬赏").click()
+
+# driver.get("http://zb.oschina.org/reward")
+# driver.find_element_by_xpath("/html/body/header/div[3]/div/div[2]/div/a").click()
 
 #悬赏类型
 driver.find_element_by_id("reward-type").click()
@@ -66,8 +80,8 @@ driver.find_element_by_xpath("/html/body/div[2]/div/section/div[2]/section/artic
 print "填写悬赏信息完成"
 
 # 保存草稿
-# driver.find_element_by_id("save-reward-draft").click()
-# print "保存悬赏成功"
+driver.find_element_by_id("save-reward-draft").click()
+print "保存悬赏成功"
 
 # 发布悬赏
 driver.find_element_by_id("publish-reward-submit").click()
