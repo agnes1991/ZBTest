@@ -52,8 +52,18 @@ driver.find_element_by_xpath("/html/body/div[2]/div/section/div[2]/section/artic
 driver.find_element_by_xpath("/html/body/div[2]/div/section/div[2]/section/article/fieldset[2]/div[1]/div/div[2]/div[2]/i").click()
 driver.find_element_by_xpath("/html/body/div[2]/div/section/div[2]/section/article/fieldset[2]/div[1]/div/div[2]/div[2]/div/div[3]").click()
 # 工作模式
+driver.find_element_by_xpath("/html/body/div[2]/div/section/div[2]/section/article/fieldset[2]/div[2]/div[2]/div/div/div/div[1]/label").click()
 # 技能要求
+driver.find_element_by_id("project-skills").clear()
+driver.find_element_by_id("project-skills").send_keys("Java")
 # 项目附件
 # 手机号码
 # 邮箱
 # 发布
+driver.find_element_by_xpath("/html/body/div[2]/div/section/div[2]/section/article/fieldset[3]/div[5]/div/div/label").click()
+# 保存草稿
+driver.find_element_by_xpath("save-hire-draft").click()
+# 发布项目
+driver.find_element_by_id("publish-hire-submit").click()
+
+driver.quit()
