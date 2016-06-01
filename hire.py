@@ -13,6 +13,12 @@ print "登陆成功"
 
 
 
+
+
+
+
+
+
 all_handles = driver.window_handles
 home_page = driver.current_window_handle
 
