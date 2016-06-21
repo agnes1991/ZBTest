@@ -14,7 +14,7 @@ def login(driver,role):
 
 	pwd = '123456'
 
-	driver.get("http://www.oschina.io/home/login?goto_page=http%3A%2F%2Fzb.oschina.io%2F")
+	driver.get("http://www.oschina.org/home/login?goto_page=http%3A%2F%2Fzb.oschina.org%2F")
 	driver.find_element_by_id("f_email").clear()
 	driver.find_element_by_id("f_email").send_keys(email)
 	driver.find_element_by_id("f_pwd").clear()
