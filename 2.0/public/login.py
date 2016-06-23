@@ -5,11 +5,11 @@ from selenium import webdriver
 
 def login(driver,role):
 	if role == '1':
-		email = 'huangrui@oschina.cn'	#发布者
+		email = 'rui_huang@outlook.com'	#发布者
 	elif role =='2':
-		email = 'selenium@126.com'	#报名者
+		email = 'huangrui@oschina.cn'	#报名者
 	else:
-		email = 'bei__mu@126.com'	#管理员
+		email = 'Rui_Huang@outlook.com'	#管理员
 
 
 	pwd = '123456'
@@ -19,4 +19,5 @@ def login(driver,role):
 	driver.find_element_by_id("f_email").send_keys(email)
 	driver.find_element_by_id("f_pwd").clear()
 	driver.find_element_by_id("f_pwd").send_keys(pwd)
-	driver.find_element_by_xpath("/html/body/div[3]/div[1]/div[1]/form/div[2]/table/tbody/tr[7]/td/input").click()
+	sub = driver.find_element_by_class_name("rndbutton")
+	sub.click()

@@ -12,7 +12,6 @@ login.login(driver,'1')
 print "登陆成功"
 
 handle = com.get_window(driver,  u"开源中国众包平台")
-# handle = com.get_window(driver, u"开源中国众包平台")
 # driver.switch_to_window(handle)
 print handle
 
