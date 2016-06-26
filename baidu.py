@@ -26,7 +26,7 @@ handle = com.get_window(driver, u"开源中国众包平台")
 # driver.switch_to_window(handle)
 
 
-print handle
+print(handle)
 # menu = driver.find_element_by_class_name("menu")
 # a_reward = menu.find_element_by_tag_name("a")
 # a_reward.click()

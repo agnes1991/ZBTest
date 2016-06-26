@@ -9,7 +9,7 @@ driver = webdriver.Chrome()
 
 #登陆
 login.login(driver,'1')
-print "登陆成功"
+print("登陆成功")
 
 
 # all_handle = driver.window_handles
