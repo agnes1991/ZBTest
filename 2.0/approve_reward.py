@@ -6,8 +6,8 @@ from public import login
 driver = webdriver.Chrome()
 
 #发布者登陆
-login.login(driver,'')
+login.login(driver,'3')
 print("登陆成功")
 
-driver.implicitly_wait(5)
-driver.get("http://admin.oschina.org/")
+# driver.implicitly_wait(5)
+# driver.get("http://admin.oschina.org/")

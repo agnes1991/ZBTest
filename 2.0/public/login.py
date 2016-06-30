@@ -11,8 +11,8 @@ def login(driver,role):
 		driver.get("http://www.oschina.org/home/login?goto_page=http%3A%2F%2Fzb.oschina.org%2F")
 		email = 'huangrui2@126.com'	#报名者
 	else:
-		driver.get("http://www.oschina.org/home/login?goto_page=http%3A%2F%2Fadmin.oschina.norg%2F")
-		email = 'rui_huang@outlook.com'	#管理员
+		driver.get("http://www.oschina.org/home/login?goto_page=http%3A%2F%2Fadmin.oschina.org%2F")
+		email = 'Rui_Huang@outlook.com'	#管理员
 
 
 	pwd = '123456'
