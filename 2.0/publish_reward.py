@@ -7,16 +7,9 @@ from public import com
 
 driver = webdriver.Chrome()
 
-#登陆
+#发布者登陆
 login.login(driver,'1')
 print("登陆成功")
-
-
-# all_handle = driver.window_handles
-# home_page = driver.current_window_handle
-# driver.switch_to_window(home_page)
-# print home_page
-# # print title
 
 driver.get("http://zb.oschina.org/")
 driver.find_element_by_class_name("menu-item").click()
@@ -42,6 +35,6 @@ driver.find_element_by_id("period").send_keys("10")
 # ckbox = driver.find_element_by_class_name("new-choose-box")	#悬赏模式选择
 # ckbox.find_element_by_id("rd-1").click()
 driver.find_element_by_id("reward-skills").send_keys("JAVA")
-driver.find_elements_by_class_name("new-choose-box").click()
-# print driver.find_element_by_class_name("new-choose-box")
+driver.find_elements_by_class_name("choose-box")[3].click()
 # driver.find_element_by_id("publish-reward-submit").click()
+# handle = com.get_window(driver,u"开源中国众包平台-我的众包")
