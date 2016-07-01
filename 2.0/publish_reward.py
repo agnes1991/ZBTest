@@ -38,3 +38,6 @@ driver.find_element_by_id("reward-skills").send_keys("JAVA")
 driver.find_elements_by_class_name("choose-box")[3].click()
 driver.find_element_by_id("publish-reward-submit").click()
 # handle = com.get_window(driver,u"开源中国众包平台-我的众包")
+
+
+# 托管赏金
