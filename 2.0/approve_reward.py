@@ -24,11 +24,11 @@ driver.implicitly_wait(10)
 
 # driver.switch_to_alert()
 driver.find_element_by_id("update-tag").click()
-
+print(u"审核通过，待托管！")
 
 # 托管赏金
 login.login(driver,'1')
-print("发布者登陆成功")
+print(u"发布者登陆成功")
 
 my_wp = driver.find_element_by_link_text(u"我的工作台")
 ActionChains(driver).move_to_element(my_wp)
@@ -46,5 +46,5 @@ driver.find_element_by_id("pay_btn").click()
 
 handle = com.get_window(driver,u"支付结果-开源中国众包平台")
 driver.find_element_by_link_text(u"查看我的悬赏").click()
-
+print(u"托管赏金成功！")
 

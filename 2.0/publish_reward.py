@@ -9,7 +9,7 @@ driver = webdriver.Chrome()
 
 #发布者登陆
 login.login(driver,'1')
-print("登陆成功")
+print(u"发布者登陆成功！")
 
 driver.get("http://zb.oschina.org/")
 driver.find_element_by_class_name("menu-item").click()
@@ -37,6 +37,7 @@ driver.find_element_by_id("period").send_keys("10")
 driver.find_element_by_id("reward-skills").send_keys("JAVA")
 driver.find_elements_by_class_name("choose-box")[3].click()
 driver.find_element_by_id("publish-reward-submit").click()
+print(u"发布成功，等待审核！")
 # handle = com.get_window(driver,u"开源中国众包平台-我的众包")
 
 
