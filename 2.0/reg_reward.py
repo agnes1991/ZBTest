@@ -28,5 +28,7 @@ driver.find_element_by_id("description").clear()
 driver.find_element_by_id("description").send_keys(u"我很适合这个项目")
 driver.find_element_by_id("scheduled").clear()
 driver.find_element_by_id("scheduled").send_keys("10")
-driver.find_element_by_class_name("new-choose-box").click()
-driver
+driver.find_element_by_class_name("choose-box").click()
+a1 = driver.find_element_by_id("reward-apply")
+a1.find_element_by_class_name("bn").click()
+
