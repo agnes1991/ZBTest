@@ -7,9 +7,10 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 # driver = webdriver.Chrome()
 
-pro_name = "发布一个悬赏全流程测试111"
+pro_name = "发布一个悬赏"
 # 2、后台审核悬赏
 def approve_reward(driver):
+	driver = webdriver.Chrome()
 	#发布者登陆
 	login.login(driver,'3')
 	print("登陆成功")
@@ -17,6 +18,7 @@ def approve_reward(driver):
 	# 查找到发布的项目
 	driver.find_element_by_link_text(u"众包管理").click()
 	driver.find_element_by_link_text(u"待审核悬赏").click()
+	# srh = 'document.getElementsByName("q").clear()'
 	driver.find_element_by_name("q").clear()
 	driver.find_element_by_name("q").send_keys(pro_name)
 	driver.find_element_by_name("q").submit()
@@ -24,14 +26,15 @@ def approve_reward(driver):
 	# 审核项目
 	driver.find_element_by_link_text(u"通过").click()
 
-	driver.implicitly_wait(10)
-
+	driver.implicitly_wait(3)
 	# driver.switch_to_alert()
 	driver.find_element_by_id("update-tag").click()
 	print(u"审核通过，待托管！")
+	driver.quit()
 
 # 3、托管赏金
 def host_reward_budget(driver):
+	driver = webdriver.Chrome()
 	# 托管赏金
 	login.login(driver,'1')
 	print(u"发布者登陆成功")
@@ -53,4 +56,5 @@ def host_reward_budget(driver):
 	handle = com.get_window(driver,u"支付结果-开源中国众包平台")
 	driver.find_element_by_link_text(u"查看我的悬赏").click()
 	print(u"托管赏金成功！")
+	driver.quit()
 

@@ -12,13 +12,11 @@ l3 = '/html/body/div[1]/div/section/article/div/div[2]/table/tbody/tr[1]/td[6]/d
 
 # 12、发布者评价开发者
 def rate_seller(driver):
+	driver = webdriver.Chrome()
 	# 发布者评价开发者
 	login.login(driver,'1')
 	com.goto_wp(driver)
-	# my_wp = driver.find_element_by_link_text(u"我的工作台")
-	# ActionChains(driver).move_to_element(my_wp)
-	# driver.implicitly_wait(3)
-	# driver.find_elements_by_class_name("glyphicon-menu-down")[1].click()
+	
 
 	handle = com.get_window(driver,u"参与的项目-开源中国众包平台")
 	driver.find_element_by_link_text(u"发布的项目").click()
@@ -26,46 +24,25 @@ def rate_seller(driver):
 	handle = com.get_window(driver,u"发布的项目-开源中国众包平台")
 	driver.find_element_by_xpath(l1).click()
 	# 选择评价星级
-	com.rate_buyer(driver)
-	# r1 = driver.find_element_by_id("corp")
-	# r1.find_elements_by_tag_name("img")[2].click()
-	# r2 = driver.find_element_by_id("comm")
-	# r2.find_elements_by_tag_name("img")[3].click()
-	# r3 = driver.find_element_by_id("skil")
-	# r3.find_elements_by_tag_name("img")[3].click()
-	# r4 = driver.find_element_by_id("qual")
-	# r4.find_elements_by_tag_name("img")[4].click()
-	# r5 = driver.find_element_by_id("resp")
-	# r5.find_elements_by_tag_name("img")[4].click()
+	com.rate_buyer(driver,1,2,3,4,5)
 	driver.find_element_by_id("comment").clear()
 	driver.find_element_by_id("comment").send_keys(u"这是一个评价")
 	driver.find_element_by_xpath(l2).click()
+	driver.quit()
 
 # 13、开发者评价发布者
 def rate_buyer(driver):
+	driver = webdriver.Chrome()
 	# 开发者评价发布者
 	login.login(driver,'2')
 	com.goto_wp(driver)
-	# my_wp = driver.find_element_by_link_text(u"我的工作台")
-	# ActionChains(driver).move_to_element(my_wp)
-	# driver.implicitly_wait(3)
-	# driver.find_elements_by_class_name("glyphicon-menu-down")[1].click()
 
 	handle = com.get_window(driver,u"参与的项目-开源中国众包平台")
 	driver.find_element_by_xpath(l3).click()
 
 	handle = com.get_window(driver,u"评价对方-开源中国众包平台")
 	com.rate_seller(driver,1,2,3,4,5)
-	# r1 = driver.find_element_by_id("corp")
-	# r1.find_elements_by_tag_name("img")[2].click()
-	# r2 = driver.find_element_by_id("comm")
-	# r2.find_elements_by_tag_name("img")[3].click()
-	# r3 = driver.find_element_by_id("paym")
-	# r3.find_elements_by_tag_name("img")[3].click()
-	# r4 = driver.find_element_by_id("requ")
-	# r4.find_elements_by_tag_name("img")[4].click()
-	# r5 = driver.find_element_by_id("resp")
-	# r5.find_elements_by_tag_name("img")[4].click()
 	driver.find_element_by_id("comment").clear()
 	driver.find_element_by_id("comment").send_keys(u"这是一个评价")
 	driver.find_element_by_xpath(l2).click()
+	driver.quit()

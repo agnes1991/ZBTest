@@ -5,9 +5,10 @@ from public import login
 
 # driver = webdriver.Chrome()
 
-pro_name = "发布一个悬赏全流程测试111"
+pro_name = "发布一个悬赏全流程测试1645"
 # 4、报名悬赏项目
 def reg_reward(driver):
+	driver = webdriver.Chrome()
 	login.login(driver,'2')
 	print(u"报名者登陆成功！")
 
@@ -21,7 +22,7 @@ def reg_reward(driver):
 		if title in user_title:
 			driver.find_elements_by_class_name("user-title")[i].click()
 
-	handle = com.get_window(driver,u"发布一个悬赏测试全流程111-开源中国众包平台")
+	handle = com.get_window(driver,u"发布一个悬赏-开源中国众包平台")
 	# 收藏
 	driver.find_element_by_id("heart").click()
 	print(u"收藏成功！")
@@ -35,3 +36,4 @@ def reg_reward(driver):
 	a1 = driver.find_element_by_id("reward-apply")
 	a1.find_element_by_class_name("bn").click()
 	print("报名成功！")
+	driver.quit()

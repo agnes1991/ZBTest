@@ -6,11 +6,12 @@ from public import login
 from public import com
 # import go
 
-pro_name = "发布一个悬赏全流程测试111"
+pro_name = "发布一个悬赏"
 # driver = webdriver.Chrome()
 
 # 1、发布悬赏
 def publish_reward(driver):
+	driver = webdriver.Chrome()
 	#发布者登陆
 	login.login(driver,'1')
 	print(u"发布者登陆成功！")
@@ -43,4 +44,5 @@ def publish_reward(driver):
 	driver.find_element_by_id("publish-reward-submit").click()
 	print(u"发布成功，等待审核！")
 	# handle = com.get_window(driver,u"开源中国众包平台-我的众包")
+	driver.quit()
 
