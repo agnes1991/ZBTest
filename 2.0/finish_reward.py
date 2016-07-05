@@ -3,6 +3,7 @@ from selenium import webdriver
 from public import login
 from public import com
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
 
 # driver = webdriver.Chrome()
 
@@ -36,9 +37,11 @@ def confirm_reg(driver):
 
 	handle = com.get_window(driver,u"悬赏详情-开源中国众包平台")
 	driver.find_element_by_link_text(u"查看报名情况").click()
-	driver.find_element_by_xpath(l2).click()
-	driver.find_element_by_link_text(u"关闭报名").click()
-	driver.find_element_by_class_name("notice-confirm").click()
+	driver.implicitly_wait(2)
+	confirm = 'document.getElementsByClassName("operate-btn")[2].click()'
+	driver.execute_script(confirm)
+	# driver.find_element_by_link_text(u"关闭报名").click()
+	# driver.find_element_by_class_name("notice-confirm").click()
 	print(u"审核通过，关闭报名，进入开发阶段！")
 
 # 6、第一次提交解决方案

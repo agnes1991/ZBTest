@@ -4,7 +4,7 @@ from public import login
 from public import com
 from selenium.webdriver.common.action_chains import ActionChains
 
-driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
 
 l1 = "/html/body/div[1]/div/section/article/div/div[2]/table/tbody/tr[1]/td[5]/div[3]/button"		# l1发布者工作台列表“评价”按钮位置
 l2 = '//*[@id="rate-form"]/div[3]/button'															# l2提交评价时，“确认提交”按钮位置

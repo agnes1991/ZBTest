@@ -2,20 +2,26 @@
 from selenium import webdriver
 from public import com
 from public import login
+import publish_reward
+import approve_reward
+import reg_reward
+import finish_reward
+import rate_reward
 
 driver = webdriver.Chrome()
 
+
 # 1、发布悬赏
-publish_reward.publish_reward(driver)
+# publish_reward.publish_reward(driver)
 
 # 2、后台审核悬赏
-approve_reward.approve_reward(driver)
+# approve_reward.approve_reward(driver)
 
 # 3、托管赏金
-approve_reward.host_reward_budget(driver)
+# approve_reward.host_reward_budget(driver)
 
 # 4、报名悬赏项目
-reg_reward.reg_reward(driver)
+# reg_reward.reg_reward(driver)
 
 # 5、审核报名信息通过
 finish_reward.confirm_reg(driver)

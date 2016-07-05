@@ -4,7 +4,9 @@ import time
 import sys
 from public import login
 from public import com
+# import go
 
+pro_name = "发布一个悬赏全流程测试111"
 # driver = webdriver.Chrome()
 
 # 1、发布悬赏
@@ -13,7 +15,7 @@ def publish_reward(driver):
 	login.login(driver,'1')
 	print(u"发布者登陆成功！")
 
-	# driver.get("http://zb.oschina.org/")
+	driver.get("http://zb.oschina.org/")
 	driver.find_element_by_class_name("menu-item").click()
 
 	handle = com.get_window(driver,u"找活首页-开源中国众包平台")
@@ -28,7 +30,7 @@ def publish_reward(driver):
 	handle = com.get_window(driver, u"发布悬赏-开源中国众包平台")
 	driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[4]/form/div[2]/div[2]/div[1]/a[1]/div[1]").click()
 	driver.find_element_by_id("reward-title").clear()
-	driver.find_element_by_id("reward-title").send_keys(u"发布一个悬赏测试全流程")
+	driver.find_element_by_id("reward-title").send_keys(pro_name)
 	driver.find_element_by_class_name("simditor-body").send_keys(u"这是一个悬赏测试")
 	driver.find_element_by_id("reward-budget").clear()
 	driver.find_element_by_id("reward-budget").send_keys("10000")

@@ -51,7 +51,7 @@ def rate_seller(driver,star1,star2,star3,star4,star5):
 def range_fix(star):
 	if star>4:
 		star=4
-	else if star<0
+	elif star<0:
 		star=0
 	return star
 

@@ -3,9 +3,11 @@ from selenium import webdriver
 from public import com
 from public import login
 from selenium.webdriver.common.action_chains import ActionChains
+# import go
 
-driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
 
+pro_name = "发布一个悬赏全流程测试111"
 # 2、后台审核悬赏
 def approve_reward(driver):
 	#发布者登陆
@@ -16,7 +18,7 @@ def approve_reward(driver):
 	driver.find_element_by_link_text(u"众包管理").click()
 	driver.find_element_by_link_text(u"待审核悬赏").click()
 	driver.find_element_by_name("q").clear()
-	driver.find_element_by_name("q").send_keys(u"发布一个悬赏测试全流程")
+	driver.find_element_by_name("q").send_keys(pro_name)
 	driver.find_element_by_name("q").submit()
 
 	# 审核项目
