@@ -14,7 +14,7 @@ import time
 
 # print(pro_name)
 # 2、后台审核悬赏
-def approve_reward(driver):
+def approve_reward(driver, name):
 	driver = webdriver.Chrome()
 	#发布者登陆
 	login.login(driver,'3')
@@ -25,8 +25,8 @@ def approve_reward(driver):
 	driver.find_element_by_link_text(u"待审核悬赏").click()
 	# srh = 'document.getElementsByName("q").clear()'
 	driver.find_element_by_name("q").clear()
-	pro_name = name+time
-	driver.find_element_by_name("q").send_keys(pro_name)
+	# pro_name = name+time
+	driver.find_element_by_name("q").send_keys(name)
 	driver.find_element_by_name("q").submit()
 
 	# 审核项目

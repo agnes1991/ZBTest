@@ -1,6 +1,6 @@
 #coding:utf-8
 from selenium import webdriver
-import time
+# import time
 import sys
 from public import login
 from public import com
@@ -14,7 +14,7 @@ from public import com
 # driver = webdriver.Chrome()
 
 # 1、发布悬赏
-def publish_reward(driver):
+def publish_reward(driver, name):
 	driver = webdriver.Chrome()
 	#发布者登陆
 	login.login(driver,'1')
@@ -35,8 +35,8 @@ def publish_reward(driver):
 	handle = com.get_window(driver, u"发布悬赏-开源中国众包平台")
 	driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[4]/form/div[2]/div[2]/div[1]/a[1]/div[1]").click()
 	driver.find_element_by_id("reward-title").clear()
-	pro_name = name+time
-	driver.find_element_by_id("reward-title").send_keys(pro_name)
+	# name = name+time
+	driver.find_element_by_id("reward-title").send_keys(name)
 	driver.find_element_by_class_name("simditor-body").send_keys(u"这是一个悬赏测试")
 	driver.find_element_by_id("reward-budget").clear()
 	driver.find_element_by_id("reward-budget").send_keys("10000")
