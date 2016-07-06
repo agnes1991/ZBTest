@@ -2,10 +2,15 @@
 from selenium import webdriver
 from public import com
 from public import login
+import time
 
 # driver = webdriver.Chrome()
 
-pro_name = "发布一个悬赏全流程测试1645"
+# time = time.strftime('%y%m%d%H%M%S',time.localtime(time.time()))
+# # print(time)
+# name = "来自test的悬赏项目"
+
+# print(pro_name)
 # 4、报名悬赏项目
 def reg_reward(driver):
 	driver = webdriver.Chrome()
@@ -22,7 +27,9 @@ def reg_reward(driver):
 		if title in user_title:
 			driver.find_elements_by_class_name("user-title")[i].click()
 
-	handle = com.get_window(driver,u"发布一个悬赏-开源中国众包平台")
+	pro_name = name+time
+	handle_name = pro_name+'-开源中国众包平台'
+	handle = com.get_window(driver,handle_name)
 	# 收藏
 	driver.find_element_by_id("heart").click()
 	print(u"收藏成功！")

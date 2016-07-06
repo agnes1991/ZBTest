@@ -3,11 +3,16 @@ from selenium import webdriver
 from public import com
 from public import login
 from selenium.webdriver.common.action_chains import ActionChains
+import time
 # import go
 
 # driver = webdriver.Chrome()
 
-pro_name = "发布一个悬赏"
+# time = time.strftime('%y%m%d%H%M%S',time.localtime(time.time()))
+# # print(time)
+# name = "来自test的悬赏项目"
+
+# print(pro_name)
 # 2、后台审核悬赏
 def approve_reward(driver):
 	driver = webdriver.Chrome()
@@ -20,6 +25,7 @@ def approve_reward(driver):
 	driver.find_element_by_link_text(u"待审核悬赏").click()
 	# srh = 'document.getElementsByName("q").clear()'
 	driver.find_element_by_name("q").clear()
+	pro_name = name+time
 	driver.find_element_by_name("q").send_keys(pro_name)
 	driver.find_element_by_name("q").submit()
 
@@ -56,5 +62,5 @@ def host_reward_budget(driver):
 	handle = com.get_window(driver,u"支付结果-开源中国众包平台")
 	driver.find_element_by_link_text(u"查看我的悬赏").click()
 	print(u"托管赏金成功！")
-	driver.quit()
+	# driver.quit()
 
