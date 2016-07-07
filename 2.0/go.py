@@ -11,19 +11,18 @@ import rate_reward
 
 driver = webdriver.Chrome()
 
-time_tag = time.strftime('%y%m%d%H%M%S',time.localtime(time.time()))
-# print(time)
+time_tag = time.strftime('%m%d%H%M%S',time.localtime(time.time()))
 name = u"来自test的悬赏项目"
-pro_name = name+time_tag
+pro_name = name + time_tag
 print(pro_name)
 
 
 # 1、发布悬赏
-publish_reward.publish_reward(driver, name)
+publish_reward.publish_reward(driver, pro_name)
 driver.implicitly_wait(3)
 
 # 2、后台审核悬赏
-approve_reward.approve_reward(driver, name)
+approve_reward.approve_reward(driver, pro_name)
 driver.implicitly_wait(3)
 
 # 3、托管赏金
@@ -31,7 +30,7 @@ approve_reward.host_reward_budget(driver)
 driver.implicitly_wait(3)
 
 # 4、报名悬赏项目
-reg_reward.reg_reward(driver)
+reg_reward.reg_reward(driver, pro_name)
 driver.implicitly_wait(3)
 
 # 5、审核报名信息通过
@@ -69,3 +68,5 @@ driver.implicitly_wait(3)
 # 13、开发者评价发布者
 rate_reward.rate_buyer(driver)
 driver.implicitly_wait(3)
+
+driver.quit()
