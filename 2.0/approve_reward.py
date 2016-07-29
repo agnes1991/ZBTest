@@ -23,6 +23,7 @@ def approve_reward(driver, pro_name):
 	print("登陆成功")
 	handle = com.get_window(driver,u'首页 - OSC业务管理系统')
 	# print(handle)
+	driver.implicitly_wait(3)
 
 	# 查找到发布的项目
 	driver.find_element_by_xpath(zb_m).click()
@@ -32,11 +33,12 @@ def approve_reward(driver, pro_name):
 	# pro_name = name+time
 	driver.find_element_by_name("q").send_keys(pro_name)
 	driver.find_element_by_name("q").submit()
+	driver.implicitly_wait(3)
 
 	# 审核项目
 	driver.find_element_by_xpath(confirm).click()
 
-	driver.implicitly_wait(10)
+	driver.implicitly_wait(3)
 	# driver.switch_to_alert()
 	driver.find_element_by_id("update-tag").click()
 	print(u"审核通过，待托管！")

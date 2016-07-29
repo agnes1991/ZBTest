@@ -11,7 +11,7 @@ import rate_reward
 
 driver = webdriver.Chrome()
 
-time_tag = time.strftime('%m%d%H%M%S',time.localtime(time.time()))
+time_tag = time.strftime('%m%d%H%M',time.localtime(time.time()))
 name = u"来自test的悬赏项目"
 pro_name = name + time_tag
 print(pro_name)
